@@ -27,7 +27,6 @@ i= fin.readline()
 val_i =''.join(n for n in i if n.isdigit())
 print(val_i)
 
-
 o = fin.readline()
 val_o =''.join(n for n in o if n.isdigit())
 print(val_o)
@@ -39,3 +38,15 @@ print(val_p)
 s = fin.readline()
 val_s =''.join(n for n in s if n.isdigit())
 print(val_s)
+
+body  = fin.read()
+print(body)
+
+#Now we know the size of each 'field' in the body of the file. That is the transition descriptions on each line, so we can use those to parse if needed.
+#Also know that I am currently assuming that like ex1, the other kiss2 file states will be labelled from 1<->s (ie. in ex1, s = 20, and we see states [1,20])
+# https://en.wikipedia.org/wiki/State_transition_table
+#I am going to base this off the one-dimensional table, but perhaps we should ask what the preference is. That or implement both forms for Dr.Rice's convenience
+
+#So we can do a readline(), then grab the first 'i' digits as the input, the next number as the state (Q), the next number as the state-next (Q+), and the last 'o' digits for output
+#For the one dimensional format, we would then make each digit of 'i' a column, Q as a column, Q+ as a column and the last 'o' digits as columns
+
