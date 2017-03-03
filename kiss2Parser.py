@@ -101,9 +101,6 @@ for x in range(0, len(states)):
 print("binaryMap:")
 print(binaryMap)
 
-##for x in range(0, len(listLines)):
-##    print(listLines[x])
-##    print(listLines[x])
 
 # generate a list with the state as a key and the bit value as the answer
 
@@ -111,7 +108,6 @@ print("states:")
 for x in range(0, len(states)):
     print(states[x])
 
-#print(states[0])
 
 #print all lines in listLines
 
@@ -144,9 +140,6 @@ for x in range(0, len(listLines)):
     fout.write('\n')
 
 
-#itterate through each line and add the unique value 
-
-# p is number of unique states, 
 
 #Now we know the size of each 'field' in the body of the file. That is the transition descriptions on each line, so we can use those to parse if needed.
 #Also know that I am currently assuming that like ex1, the other kiss2 file states will be labelled from 1<->s (ie. in ex1, s = 20, and we see states [1,20])
