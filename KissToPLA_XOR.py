@@ -2,7 +2,7 @@ import re
 import math
 import sys
 
-if len(sys.argv) < 2:
+if len(sys.argv) != 3:
  print "Usage: \n"
  print "python KissToPLA_XOR.py <input kiss2 file> <outputName>"
  sys.exit(1)
