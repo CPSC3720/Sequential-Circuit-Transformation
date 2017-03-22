@@ -1,7 +1,17 @@
 import re
 import math
-filename = raw_input()
-fileoutput = './ex1Converted.kiss2'
+import sys
+
+if len(sys.argv) < 2:
+ print "Usage: \n"
+ print "python KissToPLA_XOR.py <input kiss2 file> <outputName>"
+ sys.exit(1)
+
+
+filename = sys.argv[1]
+outputName = sys.argv[2]
+fileoutput = outputName + ".pla"
+
 
 fin=open(filename,'r')
 fout=open(fileoutput, 'w')
