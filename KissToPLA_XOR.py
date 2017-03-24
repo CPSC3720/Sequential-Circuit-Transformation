@@ -23,9 +23,11 @@ p = fin.readline()
 s = fin.readline()
 
 s = int(re.findall('\d+',s)[0])
-numBits = int(math.log(int(s),2))
+i = int(re.findall('\d+',i)[0])
+o = int(re.findall('\d+',o)[0])
+
+numBits = int(math.ceil(math.log(int(s),2)))
 FORMAT = "{:0"+ str(numBits)+"b}"
-print(numBits)
 
 inputs = list()
 outputs = list()
@@ -39,7 +41,7 @@ for line in fin:
     tmp[2] = FORMAT.format(modifiedQ);#redundantly putting it back, but oh well
     tmp[1] = FORMAT.format(int(tmp[1]))
     inputs.append( str(tmp[0]) + str(tmp[1]))
-    outputs.append( str(tmp[2]) + str(tmp[3]))
+    outputs.append( str(tmp[3]) + str(tmp[2]))
     
 
 #modify the Header for the PLA
@@ -52,10 +54,14 @@ for line in fin:
 ilb = ""
 ob = ""
 
-for i in range(0,len(inputs[0])):
-    ilb = ilb + " i" + str(i)
-for o in range(0,len(outputs[0])):
-    ob = ob + " o" + str(o)
+for n in range(0,int(i)):
+    ilb = ilb + " i" + str(n)
+for n in range(0,numBits):
+    ilb = ilb + " s" + str(n)
+for n in range(0,int(o)):
+    ob = ob + " o" + str(n)
+for n in range(0,numBits):
+    ob = ob+ " ss" + str(n)
 
 
 i = ".i " + str(len(inputs[0]))
@@ -71,3 +77,4 @@ fout.write(ob + "\n")
 fout.write(p + "\n")
 for i in range(0,len(inputs)):
     fout.write(inputs[i] +" "+ outputs[i] + "\n");
+
