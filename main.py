@@ -18,8 +18,6 @@ inputKiss2 = sys.argv[1]
 tempPath = os.path.split(inputKiss2)[1]
 inputFileNameWithExtensionRemoved = os.path.splitext(tempPath)[0]
 
-print inputFileNameWithExtensionRemoved
-
 ## First, we convert the input kiss2 file to a .pla
 call("python KissToPLA_XOR.py %s %s" %
     (inputKiss2, inputFileNameWithExtensionRemoved), shell = True)
