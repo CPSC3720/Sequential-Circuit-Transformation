@@ -8,6 +8,8 @@ KISS2_EXT = ".kiss2"
 PLA_EXT = ".pla"
 TXT_EXT = ".txt"
 
+INPUTS_DIR = "inputs/"
+
 OUTPUT_1 = "outputs/step1_Kiss2ToKiss2XOR/"
 OUTPUT_2 = "outputs/step2_Kiss2XORToPLA/"
 OUTPUT_3 = "outputs/step3_PLAToESOP/"
@@ -19,7 +21,7 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 ## Store arguments
-inputKiss2 = sys.argv[1]
+inputKiss2 = INPUTS_DIR + sys.argv[1]
 
 tempPath = os.path.split(inputKiss2)[1]
 inputFileNameWithExtensionRemoved = os.path.splitext(tempPath)[0]
