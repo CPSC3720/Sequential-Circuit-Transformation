@@ -21,7 +21,9 @@ done
 ## Execute Improved_Shared_Cube_Synthesis program
 echo "Gathering gate count from .esop files..."
 
-java -jar ./Improved_Shared_Cube_Synthesis.jar &> metrics.txt
+file=$1
+metricsFilename=${file%.*}
+java -jar ./Improved_Shared_Cube_Synthesis.jar &>  "$metricsFilename.txt"
 
 echo "Finished shared cube synthesis"
 
