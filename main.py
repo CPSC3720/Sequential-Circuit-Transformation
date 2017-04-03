@@ -15,6 +15,9 @@ OUTPUT_2 = "outputs/step2_Kiss2XORToPLA/"
 OUTPUT_3 = "outputs/step3_PLAToESOP/"
 OUTPUT_4="outputs/step4_metrics/"
 
+if len(sys.argv) == 2:
+    INPUTS_DIR = sys.argv[1];
+
 ## Iterate each .kiss2 file in the inputs directory and generate a metrics file
 for filename in os.listdir(INPUTS_DIR):
     if filename.endswith(".kiss2"):
